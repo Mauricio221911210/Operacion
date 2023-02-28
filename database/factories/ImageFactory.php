@@ -17,7 +17,7 @@ class ImageFactory extends Factory
     public function definition()
     {
         return [
-            'url' => 'cursos/' . $this->faker->image('public/storage/cursos', 640, 480, null, true),
+            'url' => 'archive/' . $this->faker->image('public/storage/archive', 640, 480, null, true),
             
         ];
     }

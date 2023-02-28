@@ -2,7 +2,7 @@
     <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div class="lg:col-span-2">
             <div class="embed-responsive">
-                {!!$current->iframe!!}
+                {!!$current->image!!}
             </div>
 
             <div class="text-id text-gray-600 font-bold mt-4">

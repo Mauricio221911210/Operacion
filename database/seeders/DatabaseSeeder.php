@@ -21,8 +21,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-       Storage::deleteDirectory('cursos');
-       Storage::makeDirectory('cursos');
+       Storage::deleteDirectory('archive');
+       Storage::makeDirectory('archive');
 
         $this->call(PermissionSeeder::class);
         $this->call(RoleSeeder::class);

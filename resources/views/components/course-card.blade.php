@@ -11,7 +11,7 @@
         <div class="flex">
 
 
-     <ul class="flex text-sm">
+    {{-- <ul class="flex text-sm">
             <li class="mr-1">
                 <i class="fas fa-star {{$course->rating >= 1 ? 'text-yellow-400' : 'text-gray-400'}}"></i>
             </li>
@@ -27,7 +27,7 @@
             <li class="mr-1">
                 <i class="fas fa-star {{$course->rating == 5 ? 'text-yellow-400' : 'text-gray-400'}}"></i>
             </li>
-        </ul>
+        </ul> --}}
 
         <p class="text-sm text-gray-500 ml-auto">
             <i class="fas fa-users"></i>

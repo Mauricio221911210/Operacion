@@ -1,9 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\InstructorCourses;
+use App\Http\Controllers\Instructor\CourseController;
+use App\Http\Livewire\Instructor\CoursesCurriculum;
 
 Route::redirect('', 'instructor/archive');
 
-Route::get('archive', InstructorCourses::class)->middleware('can:Leer Archivos')->name('courses.index');
+Route::resource('courses', CourseController::class)->names('courses');
+
+Route::get('courses/{course}/curriculum', CoursesCurriculum::class)->name('courses.curriculum');
+
 
