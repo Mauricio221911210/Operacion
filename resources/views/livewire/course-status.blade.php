@@ -1,9 +1,9 @@
 <div class="mt-8">
     <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div class="lg:col-span-2">
-            <div class="embed-responsive">
-                {!!$current->image!!}
-            </div>
+            <figure>
+                <img class="h-60 w-full object-cover" src="{{Storage::url($course->image->url)}}" alt="">
+            </figure>
 
             <div class="text-id text-gray-600 font-bold mt-4">
                 {{$current->name}}
@@ -15,7 +15,7 @@
                 </div>
             @endif
 
-            <div class="flex items-center mt-4 cursor-pointer " wire:click="completed">
+            {{--<div class="flex items-center mt-4 cursor-pointer " wire:click="completed">
 
                 @if ($current->completed)
                     <i class="fas fa-toggle-on text-2x1 text-green-600 "></i>
@@ -24,7 +24,7 @@
                 @endif
 
                 <p class="text-sm ml-2"> Marcar esta unidad como culminada </p>
-            </div>
+            </div>--}}
 
             <div class="card mt-2">
                 <div class="card-body flex text-gray-500 font-bold">
@@ -57,16 +57,16 @@
                     </div>
                 </div>
 
-                <p class="gray-600 text-sm mt-2">{{$this->advance . '%'}} Completado</p>
+                {{--<p class="gray-600 text-sm mt-2">{{$this->advance . '%'}} Completado</p>
 
                 <div class="relative pt-1">
                     <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-green-200">
                       <div style="width:{{$this->advance . '%'}}" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-500 transition-all duration-500 "></div>
                     </div>
-                  </div>
+                </div>--}}
 
                 
-                <ul>
+                <ul class="my-2">
                     @foreach ($course->sections as $section)
                         <li class="text-gray-600 mb-4 ">
                             <a class="font-bold text-base inline-block mb-2" href="">{{$section->name}}</a>
@@ -85,9 +85,9 @@
                                             @else
                                             
                                             @if ($current->id == $lesson->id)
-                                            <span class="inline-block w-4 h-4 border-2 border-gray-500 rounded-full mr-2 mt-1"></span>
+                                            <span class="inline-block w-4 h-4 border-2 border-green-500 rounded-full mr-2 mt-1"></span>
                                             @else
-                                            <span class="inline-block w-4 h-4 bg-gray-500 rounded-full mr-2 mt-1"></span>   
+                                            <span class="inline-block w-4 h-4 bg-green-500 rounded-full mr-2 mt-1"></span>   
                                             @endif
                                             
                                             @endif

@@ -38,7 +38,7 @@
                         </li>
 
                         <li class="leading-7 mb-1 border-l-4 @routeIs('instructor.courses.curriculum', $course)  border-indigo-400 @else border-transparent @endif pl-2 ">
-                            <a href="{{route('instructor.courses.curriculum', $course)}}">Lecciones del Archivo</a>
+                            <a href="{{route('instructor.courses.curriculum', $course)}}">Apartados del Archivo</a>
                         </li>
                         
                         {{--<li class="leading-7 mb-1 border-l-4 border-transparent pl-2 ">

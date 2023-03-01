@@ -5,7 +5,7 @@
         <div class="card-body">
 
             @if ($lesson->id == $item->id)
-                <div>
+                <form wire:submit.prevent="update" >
                     <div class="flex items-center">
                         <label class="w-32">Nombre</label>
                         <input wire:model="lesson.name" class="form-input w-full">
@@ -38,10 +38,10 @@
                     @enderror--}}
 
                     <div class="mt-4 flex justify-end">
-                        <button class="btn btn-danger" wire:click="cancel">Cancelar</button>
-                        <button class="btn btn-primary ml-2" wire:click="update" >Actualizar</button>
+                        <button type="button" class="btn btn-danger" wire:click="cancel">Cancelar</button>
+                        <button type="submit" class="btn btn-danger ml-2" >Actualizar</button>
                     </div>
-                </div>
+                </form>
 
             @else
 
@@ -54,10 +54,19 @@
                {{--<p class="text-sm">PLataforma {{$item->plataform->name}}</p>
                 <p class="text-sm">Enlace <a class="text-blue-600" href="{{$item->url}}" target="_blank">{{$item->url}} </a></p>--}}
            
-                <div class="mt-2">
+                <div class="my-2">
                     <button class="btn btn-primary text-sm" wire:click="edit({{$item}})">Editar</button>
-                    <button class="btn btn-danger text-sm" wire:click="destroy{{$item}}">Eliminar</button>
+                    <button class="btn btn-danger text-sm" wire:click="destroy({{$item}})">Eliminar</button>
                 </div>
+
+                <div class="mb-4">
+                    @livewire('instructor.lesson-description', ['lesson' => $item], key($item->id))
+                </div>
+
+                <div>
+                    @livewire('instructor.lesson-resources', ['lesson' => $item], key($item->id)) 
+                </div>
+
             </div>
             @endif
 
