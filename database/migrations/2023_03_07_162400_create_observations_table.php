@@ -13,9 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('platforms', function (Blueprint $table) {
+        Schema::create('observations', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+
+            $table->text('body');
+
+            $table->unsignedBigInteger('course_id');
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
+            
             $table->timestamps();
         });
     }
@@ -27,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('platforms');
+        Schema::dropIfExists('observations');
     }
 };

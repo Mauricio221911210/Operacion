@@ -72,7 +72,7 @@
     </figure>
 
     <div>
-        <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, vel dicta eius hic autem sequi incidunt tenetur, optio repudiandae possimus mollitia, labore saepe dolorem! Animi officiis molestiae sapiente fugit consectetur!</p>
+        
         {!! Form::file('file', ['class' => 'form-input w-full' . ($errors->has('slug') ? ' border-red-600' : ''), 'id' => 'file', 'accept' => 'image/*']) !!}
         @error('file')
         <strong class="text-xs text-red-600">{{$message}}</strong>

@@ -1,24 +1,19 @@
-<x-instructor-layout>
+<x-instructor-layout :course="$course">
 
-    <x-slot name="course">
-        {{$course->slug}}
-    </x-slot>   
+
 
     <h1 class="text-2xl font-bold">Informacion del Archivo</h1>
                         <hr class="mt-2 mb-6 ">
         
+      {!! Form::model($course, ['route' => ['instructor.courses.update', $course], 'method' => 'put', 'files' => true]) !!}
         
-                        
+     @include('instructor.courses.partials.form')
         
-                        {!! Form::model($course, ['route' => ['instructor.courses.update', $course], 'method' => 'put', 'files' => true]) !!}
+        <div class="flex justify-end">
+            {!! Form::submit('Actualizar informacion', ['class' => 'btn btn-success cursor-pointer']) !!}
+         </div>
         
-                        @include('instructor.courses.partials.form')
-        
-                        <div class="flex justify-end">
-                            {!! Form::submit('Actualizar informacion', ['class' => 'btn btn-success cursor-pointer']) !!}
-                        </div>
-        
-                        {!! Form::close() !!}
+      {!! Form::close() !!}
 
     <x-slot name="js">
 

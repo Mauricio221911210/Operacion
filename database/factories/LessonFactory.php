@@ -19,9 +19,6 @@ class LessonFactory extends Factory
     {
         return [
             'name' =>$this->faker->sentence(),
-            'url' => 'https://youtu.be/abLwErDrwJc',
-            'iframe' => '',
-            'platform_id' => 1,
             ];
     }
 }

@@ -1,17 +1,17 @@
-<div class="card">
+<div class="card" x-data="{open: false}" >
     <div class="card-body bg-gray-100">
 
         <header>
-            <h1>Descargar Archivo</h1>
+            <h1 x-on:click="open = !open" class="cursor-pointer ">Subir Archivo</h1>
         </header>
 
-        <div>
+        <div x-show="open">
             <hr class="my-2">
 
             @if ($lesson->resource)
                 <div class="flex justify-between items-center">
                     <p><i wire:click="download" class="fas fa-download text-gray-500 mr-2 cursor-pointer"></i>{{$lesson->resource->url}}</p>
-                    <i class="fas fa-trash text-red-500 cursor-pointer"></i>
+                    <i wire:click="destroy" class="fas fa-trash text-red-500 cursor-pointer"></i>
                 </div>
             @else
             

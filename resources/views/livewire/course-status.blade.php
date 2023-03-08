@@ -25,6 +25,13 @@
 
                 <p class="text-sm ml-2"> Marcar esta unidad como culminada </p>
             </div>--}}
+            @if ($current->resource)
+            <div class="flex items-center text-gray-600 cursor-pointer" wire:click="download">
+                <i class="fas fa-download text-lg text-gray-600"></i>
+                <p class="text-sm ml-2">Descargar Archivo</p>
+            </div>
+
+            @endif
 
             <div class="card mt-2">
                 <div class="card-body flex text-gray-500 font-bold">

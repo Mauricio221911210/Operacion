@@ -9,7 +9,7 @@ use Livewire\Component;
 
 class CoursesLesson extends Component
 {
-    public $section, $lesson, $platforms, $name, $platform_id = 1 ;
+    public $section, $lesson, $platforms, $name;
 
     protected $rules = [
         'lesson.name' => 'required',
@@ -20,9 +20,6 @@ class CoursesLesson extends Component
 
     public function mount(Section $section){
         $this->section = $section;
-
-        $this->platforms = Platform::all();
-
         $this->lesson = new Lesson();
     }
 

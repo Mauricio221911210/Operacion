@@ -116,7 +116,7 @@ class CourseController extends Controller
         $course->update($request->all());
 
         if($request->file('file')){
-            $url = Storage::put('archive',$request->file('file'));
+            $url = Storage::put('public/storage/archive',$request->file('file'));
 
             if ($course->image) {
                 Storage::delete($course->image->url);
@@ -144,5 +144,26 @@ class CourseController extends Controller
     public function destroy(Course $course)
     {
         //
+    }
+
+    public function goals(Course $course){
+        return view('instructor.courses.goals', compact('course'));
+    }
+
+    public function status(Course $course){
+        $course->status = 2;
+        $course->save();
+
+        if ( $course->observation) {
+            $course->observation->delete();
+        }
+
+        return redirect()->route('instructor.courses.edit', $course);
+    }
+
+    
+
+    public function observation(Course $course){
+        return view('instructor.courses.observation', compact('course'));
     }
 }

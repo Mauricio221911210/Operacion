@@ -5,6 +5,8 @@ namespace App\Http\Livewire\Instructor;
 use App\Models\Lesson;
 use Livewire\Component;
 
+use Illuminate\Support\Facades\Storage;
+
 use Livewire\WithFileUploads;
 
 
@@ -31,7 +33,7 @@ class LessonResources extends Component
             'file' => 'required'
         ]);
 
-        $url = $this->file->store('resources');
+        $url = $this->file->store('public/resources');
 
         $this->lesson->resource()->create([
             'url' => $url
@@ -40,7 +42,13 @@ class LessonResources extends Component
         $this->lesson = Lesson::find($this->lesson->id);
     }
 
+    public function destroy(){
+        Storage::delete($this->lesson->resource->url);
+        $this->lesson->resource->delete();
+        $this->lesson = Lesson::find($this->lesson->id);
+    }
+
     public function download(){
-        return response()->download(storage_path('app/resource/' . $this->lesson->resource->url));
+        return response()->download(storage_path('app/' . $this->lesson->resource->url));
     }
 }

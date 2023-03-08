@@ -20,5 +20,5 @@ class ImageFactory extends Factory
             'url' => 'archive/' . $this->faker->image('public/storage/archive', 640, 480, null, false)
              
         ];
-    }
+    } 
 }

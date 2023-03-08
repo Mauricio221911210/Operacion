@@ -33,6 +33,8 @@
                 <p class="text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                      Ea soluta reprehenderit  optio quae assumenda libero ratione.</p>
 
+                     
+
             </article>
 
             <article>
@@ -85,23 +87,29 @@
     </section>
 
     <section class="mt-24 bg-gray-700 py-12">
-        <h1 class="text-center text-white text-3xl">No sabes donde ver los Archivos actualizados</h1>
-        <p class="text-center text-white ">Aprieta el boton para vizualizar los Archivos actualizados  </p>
+        <h1 class="text-center text-white text-3xl">No sabes a que CD Perteneces </h1>
+        <p class="text-center text-white ">Vizualiza el Mapa que se encuentra abajo  </p>
 
-        <div class="flex justify-center mt-4">
+        <iframe class=" w-full object-cover object-center" src="https://www.google.com/maps/d/embed?mid=1Pa6BWzXYOS4K0GNl6Noy3Dq4NRd0BkVo&ehbc=2E312F" width="640" height="480"></iframe>
+
+        {{--<div class="flex justify-center mt-4">
             <a href="{{route('courses.index')}}" type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ">
                  Ver Archivos
             </a>
-        </div>
+        </div>--}}
     </section>
 
     <section class="my-24">
         <h1 class="text-center text-3xl text-gray-700">Últimos Archivos</h1>
         <p class="text-center text-gray-500 text-sm mb-6">Archivos de ultimo momento</p>
+
+        
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
             @foreach ($courses as $course)
             <x-course-card :course="$course" />
             @endforeach
+
+            
        
        
         </div>
