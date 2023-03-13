@@ -36,7 +36,7 @@ class CourseFactory extends Factory
             'title' => $title,
             'subtitle' => $this->faker->sentence(),
             'description' => $this->faker->sentence(),
-            'status' => $this->faker->randomElement([Course::BORRADOR, Course::REVISION, Course::PUBLICADO]),
+            'status' => $this->faker->randomElement([Course::BORRADOR, Course::REVISION_ZONA, Course::PUBLICADO, Course::REVISION_CD]),
             'slug' => Str::slug($title),
             'user_id' => $this->faker->randomElement([1,2,3,4,5]),
             'level_id' => level::all()->random()->id,

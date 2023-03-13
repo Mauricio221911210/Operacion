@@ -9,10 +9,17 @@ use App\Models\Course;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ApprovedArchive;
 use App\Mail\RejectArchive;
-
+use App\Models\Lesson;
 
 class CourseController extends Controller
 {
+
+    public $lesson;
+
+    public function mount(Lesson $lesson){
+        $this->lesson = $lesson;
+    }
+    
     public function index(){
 
         $courses = Course::where('status', 2)->paginate();
@@ -25,6 +32,13 @@ class CourseController extends Controller
         $this->authorize('revision', $course);
     
         return view('admin.courses.show', compact('course'));
+    }
+
+    public function revision(Course $course){
+        $course->status = 4;
+        $course->save();
+
+        return redirect()->route('admin.courses.index')->with('info', 'El archivo se reviso con éxito');
     }
 
     public function approved(Course $course){
@@ -73,5 +87,11 @@ class CourseController extends Controller
    
         return redirect()->route('admin.courses.index')->with('info', 'El archivo se rechazo con éxito');
 
+
+    }
+ 
+
+    public function download(){
+        return response()->download(storage_path('app/' . $this->lesson->resource->url));
     }
 }

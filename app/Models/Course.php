@@ -13,8 +13,9 @@ class Course extends Model
     protected $withCount = ['students', 'reviews'];
 
     const BORRADOR = 1;
-    const REVISION = 2;
+    const REVISION_ZONA = 2;
     const PUBLICADO = 3;
+    const REVISION_CD = 4;
 
 
     public function getRatingAttribute(){

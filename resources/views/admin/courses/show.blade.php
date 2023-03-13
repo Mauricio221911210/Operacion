@@ -75,10 +75,22 @@
                             <ul class="gris grid-col-1 gap-2">
                                 @foreach ($section->lessons as $lesson)
                                     <li class="text gray-700 text-base "><li class="fas fa-play-circle mr-2 text-gray-600"></li>{{$lesson->name}}</li>
-                                @endforeach
-                            </ul>
+                                    
+                                    @if ($lesson->resource)
+                                    <div  wire:click="download" class="flex items-center text-gray-600 cursor-pointer" >
+                                        <i class="fas fa-download text-lg text-gray-600"></i>
+                                        <p class="text-sm ml-2">Descargar Archivo: {{$lesson->resource->url}}</p>
+                                    </div>
 
+                            @endif
+                                    
+                                @endforeach
+
+                                
+                            </ul>
                         </div>
+
+                        
 
                     </article>
 
@@ -131,12 +143,20 @@
                         </div>
                     </div>
 
+                    <form action="{{route('admin.courses.revision', $course)}}" class="mt-4" method="POST">
+
+                        @csrf
+
+                        <button type="submit" class="btn btn-success w-full"> Aprobar Revision</button>
+                    </form>
+
                     <form action="{{route('admin.courses.approved', $course)}}" class="mt-4" method="POST">
 
                         @csrf
 
                         <button type="submit" class="btn btn-success w-full"> Aprobar Archivo</button>
                     </form>
+
 
                     <a href="{{route('admin.courses.observation', $course)}}" class="btn btn-success w-full block text-center mt-4 " >Observaciones del Archivo</a>
 

@@ -23,7 +23,7 @@
                     <th>ID</th>
                     <th>Nombre</th>
                     <th>Zona</th>
-                    <th></th>
+                    <th>Proceso</th>
                 </thead>
 
                 <tbody>
@@ -32,6 +32,7 @@
                             <td>{{$course->id}}</td>
                             <td>{{$course->title}}</td>
                             <td>{{$course->category->name}}</td>
+                            <td>{{$course->price->name}}</td>
                             <td>
                                 <a class="btn btn-primary" href="{{route('admin.courses.show', $course)}}">Revisar</a>
                             </td>

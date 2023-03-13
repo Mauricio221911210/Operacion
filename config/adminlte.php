@@ -336,7 +336,7 @@ return [
         ],
         ['header' => 'Opciones de Archivos'],
         [
-            'text' => 'Pendientes de Aprovacion',
+            'text' => 'Pendientes de Aprobación',
             'route'  => 'admin.courses.index',
             'icon' => 'fas fa-fw fa-user',
         ],

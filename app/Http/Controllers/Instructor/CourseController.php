@@ -7,7 +7,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Models\level;
-
+use App\Models\Price;
 use Illuminate\Support\Facades\Storage;
 
 class CourseController extends Controller
@@ -31,8 +31,9 @@ class CourseController extends Controller
     {
         $categories = Category::pluck('name', 'id');
         $levels = level::pluck('name', 'id');
+        $prices = Price::pluck('name','id');
 
-        return view('instructor.courses.create', compact('categories', 'levels'));
+        return view('instructor.courses.create', compact('categories', 'levels','prices'));
     }
 
     /**
@@ -51,6 +52,7 @@ class CourseController extends Controller
             'description' => 'required',
             'category_id' => 'required',
             'level_id' => 'required',
+            'price_id' => 'required',
             'file' => 'image',
         ]);
 
@@ -89,9 +91,10 @@ class CourseController extends Controller
 
         $categories = Category::pluck('name', 'id');
         $levels = level::pluck('name', 'id');
+        $prices = Price::pluck('name', 'id');
 
 
-        return view('instructor.courses.edit', compact('course', 'categories', 'levels'));
+        return view('instructor.courses.edit', compact('course', 'categories', 'levels','prices'));
     }
 
     /**
@@ -110,6 +113,7 @@ class CourseController extends Controller
             'description' => 'required',
             'category_id' => 'required',
             'level_id' => 'required',
+            'price_id' => 'required',
             'file' => 'image',
         ]);
 
@@ -156,7 +160,7 @@ class CourseController extends Controller
 
         if ( $course->observation) {
             $course->observation->delete();
-        }
+        } 
 
         return redirect()->route('instructor.courses.edit', $course);
     }

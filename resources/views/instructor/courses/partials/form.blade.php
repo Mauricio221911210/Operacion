@@ -38,7 +38,7 @@
 
 </div>
 
-<div class="grid grid-cols-2 gap-4">
+<div class="grid grid-cols-3 gap-4">
     <div>
         {!! Form::label('category_id', 'Zonas') !!}
         {!! Form::select('category_id', $categories, null, ['class' => 'form-input block w-full mt-1']) !!}
@@ -58,6 +58,17 @@
         @enderror
 
     </div>
+
+    <div>
+        {!! Form::label('price_id', 'Proceso') !!}
+        {!! Form::select('price_id', $prices, null, ['class' => 'form-input block w-full mt-1']) !!}
+
+        @error('price_id')
+        <strong class="text-xs text-red-600">{{$message}}</strong>
+        @enderror
+
+    </div>
+
 </div>
 
 <h1 class="text-2xl font-bold mt-8 mb-2">Imagen del Archivo</h1>

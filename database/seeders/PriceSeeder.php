@@ -17,23 +17,48 @@ class PriceSeeder extends Seeder
     public function run()
     {
         Price::create([
-            'name' => 'Gratis',
-            'value' => 0
+            'name' => 'Mantenimiento a Redes Areas', 
+            
         ]);
 
         Price::create([
-            'name' => '19.99 US$ (nivel 1)',
-            'value' => 19.99
+            'name' => 'Mantenimiento Subterraneas',
+            
         ]);
 
         Price::create([
-            'name' => '49.99 US$ (nivel 2)',
-            'value' => 49.99
+            'name' => 'Mantnimiento a Subestaciones',
+            
         ]);
 
         Price::create([
-            'name' => '99.99 US$ (nivel 3)',
-            'value' => 99.99
+            'name' => 'Mantenimeinto a Lineas',
+            
+        ]);
+
+        Price::create([
+            'name' => 'Operación y Analisis', 
+            
+        ]);
+
+        Price::create([
+            'name' => 'CCD', 
+            
+        ]);
+
+        Price::create([
+            'name' => 'Protecciones', 
+            
+        ]);
+
+        Price::create([
+            'name' => 'Comunicación y Control', 
+            
+        ]);
+
+        Price::create([
+            'name' => 'Calidad de la Energía', 
+            
         ]);
     }
 }
