@@ -83,7 +83,7 @@
                     @break
                 @case(4)
                     <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 bg-yellow-400  " >
-                      Revision De Division
+                      Revision  Divisional
                     </span>
                 @break
                 @default

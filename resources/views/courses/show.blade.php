@@ -15,8 +15,9 @@
                 <h1 class="text-4xl">{{$course->title}}</h1>
                 <h2 class=" text-xl mb-3 ">{{$course->subtitle}}</h2>
                 <p class="mb-2 "><i class="fas fa-chart-line"></i> CD:{{$course->level->name}}</p>
-                <p class="mb-2"><i class="far fa-earth-americas"></i> Zona:{{$course->category->name}}</p>
+                <p class="mb-2"><i class="fa fa-globe"></i> Zona:{{$course->category->name}}</p>
                 <p class="mb-2"><i class="fas fa-users"></i> Personas dentro del archivo:{{$course->students_count}}</p>
+                <p class="mb-2"><i class="fa fa-wrench"></i> Tipo de Procesos:{{$course->price->name}}</p>
                 {{--<p><i class="far fa-star"></i> Calificacion:{{$course->rating}}</p>--}}
 
             </div>
@@ -58,7 +59,7 @@
                         <div class="bg-white py-2 px-4" x-show="open">
                             <ul class="gris grid-col-1 gap-2">
                                 @foreach ($section->lessons as $lesson)
-                                    <li class="text gray-700 text-base "><li class="fas fa-play-circle mr-2 text-gray-600"></li>{{$lesson->name}}</li>
+                                    <li class="text gray-700 text-base "><li class="fa fa-folder-open mr-2 text-gray-600"></li>{{$lesson->name}}</li>
                                 @endforeach
                             </ul>
 

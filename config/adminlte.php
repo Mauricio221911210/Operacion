@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'Libro de Operación',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'use_ico_only' => false,
+    'use_ico_only' => true,
     'use_full_favicon' => false,
 
     /*
@@ -64,11 +64,11 @@ return [
     */
 
     'logo' => '<b>Libro de </b>Operacion',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-    'logo_img_class' => 'brand-image img-circle elevation-3',
+    'logo_img' => 'vendor/adminlte/dist/img/favicon.png',
+    'logo_img_class' => 'brand-image img-circle ',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'Admin Logo',
+    'logo_img_alt' => 'Libro de Operacion',
 
     /*
     |--------------------------------------------------------------------------
@@ -86,7 +86,7 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => 'vendor/adminlte/dist/img/favicon.png',
             'alt' => 'Auth Logo',
             'class' => '',
             'width' => 50,
@@ -109,7 +109,7 @@ return [
     'preloader' => [
         'enabled' => true,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => 'vendor/adminlte/dist/img/favicon.png',
             'alt' => 'AdminLTE Preloader Image',
             'effect' => 'animation__shake',
             'width' => 60,
@@ -338,7 +338,12 @@ return [
         [
             'text' => 'Pendientes de Aprobación',
             'route'  => 'admin.courses.index',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fa fa-check-square',
+        ],
+        [
+            'text' => 'Pendientes de Revisión',
+            'route'  => 'admin.courses.archive',
+            'icon' => 'fa fa-check-square',
         ],
        /* [
             'text' => 'change_password',

@@ -19,31 +19,41 @@ class CourseController extends Controller
     public function mount(Lesson $lesson){
         $this->lesson = $lesson;
     }
+
+    public function revisiona(){
+        $courses = Course::where('status', 2)->paginate();
+
+       return view('admin.courses.index', compact('courses'));
+    }
     
     public function index(){
 
-        $courses = Course::where('status', 2)->paginate();
+        $courses = Course::where('status', 4)->paginate();
 
         return view('admin.courses.index', compact('courses'));
     }
 
+
     public function show(Course $course){
     
-        $this->authorize('revision', $course);
+        /*$this->authorize('revision', $course);*/
     
         return view('admin.courses.show', compact('course'));
     }
 
     public function revision(Course $course){
+       
+        /*$this->authorize('revision', $course);*/
+
         $course->status = 4;
         $course->save();
 
-        return redirect()->route('admin.courses.index')->with('info', 'El archivo se reviso con éxito');
+        return redirect()->route('admin.courses.archive')->with('info', 'El archivo se reviso con éxito');
     }
 
     public function approved(Course $course){
 
-        $this->authorize('revision', $course);
+        /*$this->authorize('revision', $course);*/
 
         if(!$course->lessons || !$course->goals || !$course->requirements){
             return back()->with('info', 'No se puede publicar el Archivo INCOMPLETO');

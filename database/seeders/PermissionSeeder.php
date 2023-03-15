@@ -57,6 +57,18 @@ class PermissionSeeder extends Seeder
 
         Permission::create([
             'name' => 'Editar Usuario'
-        ]);
+        ]); 
+
+        Permission::create([
+            'name' => 'Dar Revisión'
+        ]); 
+
+        Permission::create([
+            'name' => 'Aprobar Archivos'
+        ]); 
+
+        Permission::create([
+            'name' => 'Dar Observaciones'
+        ]); 
     }
 }

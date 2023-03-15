@@ -2,18 +2,18 @@
     <div class="bg-gray-200 py-4 mb-16 ">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex">
             <button class=" focus:outline-none bg-white shadow h-12 px-4 rounded-lg text-gray-700 mr-4" wire:click="resetFilters">
-                <i class=" fas fa-archway text-xs mr-2"></i>
+                <i class=" 	fa fa-folder text-xl mr-2"></i>
                 Todos los Archivos
             </button>
 
             <!--Dropdown Zones -->
             <div class="relative" x-data="{ open:false }">
                 <button class="px-4 text-gray-700 block h-12 rounded-lg overflow-hidden focus:outline-none bg-white shadow mr-4" x-on:click="open = true">
-                    <i class="fas fa-tags text-sm mr-2"></i>
+                    <i class="fa fa-map text-sm mr-2"></i>
                     Zonas
                     <i class="fas fa-angle-down text-sm ml-2   "></i>
                 <button>
-            <!--Dropdown Body -->
+            <!--Dropdown Body --> 
             <div class="absolute right x-40 mt-2 bg-white border rounded shadow-xl " x-show="open" x-on:click.away="open = false">
                 @foreach ($categories as $category)
                 <a  class=" cursos-pointer transition-colors duration-200 block px-4 py-2 text-normal text-gray-900 rounded hover:bg-purple-500 hover:text-white" wire:click="$set('category_id', {{$category->id}})" x-on:click="open = false" >{{$category->name}} </a>
@@ -24,8 +24,8 @@
 
             <!--Dropdown Levels-->
             <div class="relative" x-data="{ open:false }">
-                <button class="px-4 text-gray-700 block h-12 rounded-lg overflow-hidden focus:outline-none bg-white shadow" x-on:click="open = true">
-                    <i class="fas fa-tags text-sm mr-2"></i>
+                <button class="px-4 text-gray-700 block h-12 rounded-lg overflow-hidden focus:outline-none bg-white shadow mr-4" x-on:click="open = true">
+                    <i class="fa fa-map-signs text-sm mr-2"></i>
                    CD
                     <i class="fas fa-angle-down text-sm ml-2   "></i>
                 <button>
@@ -39,6 +39,26 @@
             </div>
  
             </div>
+
+            <!--Dropdown Zones -->
+            <div class="relative" x-data="{ open:false }">
+                <button class="px-4 text-gray-700 block h-12 rounded-lg overflow-hidden focus:outline-none bg-white shadow mr-4" x-on:click="open = true">
+                    <i class="fa fa-wrench text-sm mr-2"></i>
+                    Procesos
+                    <i class="fas fa-angle-down text-sm ml-2   "></i>
+                <button>
+            <!--Dropdown Body --> 
+            <div class="absolute right x-40 mt-2 bg-white border rounded shadow-xl " x-show="open" x-on:click.away="open = false">
+                @foreach ($prices as $price)
+                <a  class=" cursos-pointer transition-colors duration-200 block px-4 py-2 text-normal text-gray-900 rounded hover:bg-purple-500 hover:text-white" wire:click="$set('price_id', {{$price->id}})" x-on:click="open = false" >{{$price->name}} </a>
+                @endforeach
+            </div>
+ 
+            </div>
+
+
+
+            
 
         
 

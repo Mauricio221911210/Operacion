@@ -6,7 +6,7 @@
             </figure>
 
             <div class="text-id text-gray-600 font-bold mt-4">
-                {{$current->name}}
+                 {{$current->name}}
             </div>
 
             @if ($current->description)
@@ -52,7 +52,7 @@
 
         <div class="bg-white shadow-lg rounded overflow-hidden">
             <div class="px-6 py-4">
-                <h1 class="text 2xl leading-8 text-center mb-4 " >{{$course->title}}</h1>
+                <h1 class="text 2xl leading-8 text-center mb-4 " > Nombre del Archivo: {{$course->title}}</h1>
 
                 <div class="flex items-center">
                     <figure>
@@ -64,6 +64,33 @@
                     </div>
                 </div>
 
+                   
+                {{--Revision, Observaciones y Aprobacion--}}
+                <div class="card-body"  >
+
+                    @switch($course->status)
+                        @case(2)
+                        <form action="{{route('admin.courses.revision', $course)}}" class="mt-4" method="POST">
+                            @csrf
+                            <button type="submit" class="btn btn-success w-full"> Aprobar Revision</button>
+                        </form>
+                            @break
+                        @case(4)
+                        <form action="{{route('admin.courses.approved', $course)}}" class="mt-4" method="POST">
+                            @csrf
+                            <button type="submit" class="btn btn-success w-full"> Aprobar Archivo</button>
+                        </form>
+                            @break
+                        @default
+                    @endswitch
+
+                    @can('Ver dashboard')
+                    <a href="{{route('admin.courses.observation', $course)}}" class="btn btn-success w-full block text-center mt-4 " >Observaciones del Archivo</a>
+                    @endcan
+
+                </div>
+
+                
                 {{--<p class="gray-600 text-sm mt-2">{{$this->advance . '%'}} Completado</p>
 
                 <div class="relative pt-1">

@@ -33,8 +33,8 @@
                             <td>{{$course->title}}</td>
                             <td>{{$course->category->name}}</td>
                             <td>{{$course->price->name}}</td>
-                            <td>
-                                <a class="btn btn-primary" href="{{route('admin.courses.show', $course)}}">Revisar</a>
+                            <td> 
+                                <a class="btn btn-primary" href="{{route('admin.courses.status', $course)}}">Revisar</a>
                             </td>
                         </tr>
                     @endforeach

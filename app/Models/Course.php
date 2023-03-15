@@ -43,6 +43,12 @@ class Course extends Model
         }
     }
 
+    public function scopePrice($query, $price_id){
+        if($price_id){
+            return $query->where('price_id', $price_id);
+        }
+    }
+
 
     public function getRouteKeyName(){
         return "slug";

@@ -7,7 +7,7 @@ use Livewire\Component;
 use App\Models\Course;
 use App\Models\Category;
 use App\Models\level;
-
+use App\Models\Price;
 use Livewire\WithPagination;
 
 class CoursesIndex extends Component
@@ -16,6 +16,7 @@ class CoursesIndex extends Component
 
     public $category_id;
     public $level_id;
+    public $price_id;
 
 
 
@@ -25,20 +26,22 @@ class CoursesIndex extends Component
 
         $categories = Category::all();
         $levels = level::all();
+        $prices = Price::all();
 
 
 
         $courses = Course::where('status', 3)
                         ->category($this->category_id)
                         ->level($this->level_id)
+                        ->price($this->price_id)
                         ->latest('id')
                         ->paginate(8);
 
-        return view('livewire.courses-index', compact('courses','categories','levels'));
+        return view('livewire.courses-index', compact('courses','categories','levels','prices'));
     }
 
     public function resetFilters(){
-        $this->reset(['category_id', 'level_id']);
+        $this->reset(['category_id', 'level_id','price_id']);
 
     }
 }
