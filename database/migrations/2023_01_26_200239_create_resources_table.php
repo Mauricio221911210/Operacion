@@ -18,7 +18,7 @@ return new class extends Migration
             $table->id();
 
             $table->string('url');
-
+            $table->string('later_resource');
             $table->unsignedBigInteger('resourceable_id');
             $table->string('resourceable_type');
 
