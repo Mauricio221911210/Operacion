@@ -147,7 +147,10 @@ class CourseController extends Controller
      */
     public function destroy(Course $course)
     {
-        //
+        $course->delete();
+
+       
+        return redirect()->route('instructor.courses.index')->with('info', 'El archivo se elimino con éxito');
     }
 
     public function goals(Course $course){

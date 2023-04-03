@@ -3,7 +3,7 @@
 @section('title', 'Libro de Operacion')
 
 @section('content_header')
-    <h1>Observaciones del curso: {{$course->title}}</h1>
+    <h1>Observaciones del archivo: {{$course->title}}</h1>
 @stop
 
 @section('content')

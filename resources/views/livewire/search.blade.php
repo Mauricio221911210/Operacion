@@ -14,7 +14,7 @@
 
         @empty 
         <li class="leading-10 px-5 text-sm cursor-pointer hover:bg-gray-300 ">
-           No hay ninguna referencia :c
+           No hay ninguna referencia 
         </li>
 
         @endforelse

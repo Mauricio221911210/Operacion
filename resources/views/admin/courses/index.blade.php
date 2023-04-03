@@ -3,7 +3,7 @@
 @section('title', 'Libro de Operacion')
 
 @section('content_header')
-    <h1>Archivos Pendiente de Aprobacion</h1>
+    <h1>Archivos Pendientes</h1>
 @stop
 
 @section('content')

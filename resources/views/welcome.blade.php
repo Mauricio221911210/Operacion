@@ -87,7 +87,7 @@
     </section>
 
     <section class="mt-24 bg-gray-700 py-12">
-        <h1 class="text-center text-white text-3xl">Mapa de Valle Norte </h1>
+        <h1 class="text-center text-white text-3xl">Mapa de Division Valle Norte </h1>
         {{--<p class="text-center text-white ">Vizualiza el Mapa que se encuentra abajo  </p>--}}
 
         <iframe class=" w-full object-cover object-center" src="https://www.google.com/maps/d/embed?mid=1Pa6BWzXYOS4K0GNl6Noy3Dq4NRd0BkVo&ehbc=2E312F" width="640" height="480"></iframe>

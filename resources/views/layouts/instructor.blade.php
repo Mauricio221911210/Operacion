@@ -103,7 +103,11 @@
                             
                     @endswitch
 
-                    
+                    <form action="{{route('instructor.courses.destroy', $course)}}" method="POST">
+                        @method('delete')
+                        @csrf
+                        <button class="btn btn-danger" type="submit"> Eliminar </button>
+                        </form>
 
                 </aside>
         

@@ -5,7 +5,7 @@
             <figure>
                 {{--<img class="h-60 w-full object-cover" src="{{Storage::url($course->image->url)}}" alt="">--}}
                 @isset($course->image)
-                    <img id="picture" class="w-full h-64 object-cover object-center" src="{{Storage::url($course->image->url)}}" alt="">
+                    <img id="picture" class="w-full h-64 object-cover object-center" src="{{Storage::url($course->image->url)}}"  alt="no-image">
                 @else
                     <img id="picture" class="w-full h-64 object-cover object-center" src="https://images.pexels.com/photos/357514/pexels-photo-357514.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
                 @endisset
@@ -18,6 +18,7 @@
                 <p class="mb-2"><i class="fa fa-globe"></i> Zona:{{$course->category->name}}</p>
                 <p class="mb-2"><i class="fas fa-users"></i> Personas dentro del archivo:{{$course->students_count}}</p>
                 <p class="mb-2"><i class="fa fa-wrench"></i> Tipo de Procesos:{{$course->price->name}}</p>
+                
                 {{--<p><i class="far fa-star"></i> Calificacion:{{$course->rating}}</p>--}}
 
             </div>

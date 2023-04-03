@@ -36,12 +36,14 @@ class LessonResources extends Component
         $url = $this->file->store('public/resources');
 
         $this->lesson->resource()->create([
-            'url' => $url
+            'url' => $url,
+            'later_resource' => $url
         ]);
 
         $this->lesson = Lesson::find($this->lesson->id);
     }
 
+    
     public function destroy(){
         Storage::delete($this->lesson->resource->url);
         $this->lesson->resource->delete();

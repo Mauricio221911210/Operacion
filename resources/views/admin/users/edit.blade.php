@@ -12,7 +12,7 @@
             <h5>Nombre</h5>
             <p class="form-control">{{$user->name}}</p>
 
-            <h5>Lista de Roles</h5>
+            <h5>Lista de Roles</h5> 
 
             {!! Form::model($user, ['route' => ['admin.users.update', $user], 'method'  => 'put']) !!}
             
