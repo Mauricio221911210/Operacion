@@ -5,7 +5,7 @@
             <figure>
                 {{--<img class="h-60 w-full object-cover" src="{{Storage::url($course->image->url)}}" alt="">--}}
                 @isset($course->image)
-                    <img id="picture" class="w-full h-64 object-cover object-center" src="{{Storage::url($course->image->url)}}"  alt="no-image">
+                    <img id="picture" class="w-full h-64 object-cover object-center" src="{{Storage::url($course->image->url)}}"  alt="">
                 @else
                     <img id="picture" class="w-full h-64 object-cover object-center" src="https://images.pexels.com/photos/357514/pexels-photo-357514.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
                 @endisset
@@ -125,7 +125,11 @@
             <aside class="hidden lg:block">
                 @foreach ($similares as $similar)
                     <article class="flex mb-6">
-                        <img class="h-32 w-40 object-cover" src="{{Storage::url($similar->image->url)}}" alt=""  > 
+                       @isset($course->image)
+                <img id="picture" class="w-full h-64 object-cover object-center" src="{{Storage::url($course->image->url)}}"  alt="">
+            @else
+                <img id="picture" class="w-full h-64 object-cover object-center" src="https://images.pexels.com/photos/357514/pexels-photo-357514.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+            @endisset
                         <div class="ml-3">
                             <h1>
                                 <a class="font-bold text-gray-500 mb-3" href="{{route('courses.show', $similar)}}">{{Str::limit($similar->title, 40)}}</a>

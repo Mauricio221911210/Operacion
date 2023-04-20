@@ -16,9 +16,11 @@
     @endif
 
    <div class="card">
+    @can('Crear role')
     <div class="card-header">
         <a href="{{route('admin.roles.create')}}">Crear Roles</a>
     </div>
+    @endcan
     <div class="card-body">
         <table class="table table-striped ">
             <thead>
@@ -36,19 +38,24 @@
                         <td>{{$role->id}}</td>
                         <td>{{$role->name}}</td>
 
+                        @can('Editar role')
                         <td width="10px">
                             <a class="btn btn-secondary" href="{{route('admin.roles.edit', $role)}}">Editar</a>
                         </td>
+                        @endcan
 
+                        
                         <td width="10px">
                             
                             <form action="{{route('admin.roles.destroy', $role)}}" method="POST">
                             @method('delete')
                             @csrf
+                            @can('Eliminar role')
                             <button class="btn btn-danger" type="submit"> Eliminar </button>
                             </form>
-
+                            @endcan
                         </td>
+                        
                     </tr>
                 @empty
 

@@ -27,7 +27,7 @@ class PriceSeeder extends Seeder
         ]);
 
         Price::create([
-            'name' => 'Mantnimiento a Subestaciones',
+            'name' => 'Mantenimiento a Subestaciones',
             
         ]);
 

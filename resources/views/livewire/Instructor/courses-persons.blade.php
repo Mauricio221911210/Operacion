@@ -6,7 +6,7 @@
     <x-table-responsive>
 
         <div class="px-6 py-4 ">
-          <input  wire:model='search' class="form-input w-full flex-1 shadow-sm" placeholder="Ingrese el nombre de un archivo">
+          <input  wire:model='search' class="form-input w-full flex-1 shadow-sm" placeholder="Ingrese el nombre del Usuario">
         </div>
     
         @if ($students->count())

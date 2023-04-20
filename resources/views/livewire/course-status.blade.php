@@ -2,7 +2,11 @@
     <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div class="lg:col-span-2">
             <figure>
-                <img class="h-60 w-full object-cover" src="{{Storage::url($course->image->url)}}" alt="">
+                @isset($course->image)
+                <img id="picture" class="w-full h-64 object-cover object-center" src="{{Storage::url($course->image->url)}}"  alt="">
+            @else
+                <img id="picture" class="w-full h-64 object-cover object-center" src="https://images.pexels.com/photos/357514/pexels-photo-357514.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+            @endisset 
             </figure>
 
             <div class="text-id text-gray-600 font-bold mt-4">

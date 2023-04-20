@@ -46,7 +46,7 @@
         </div>
 
         <a href="{{route('courses.show', $course)}}" type="submit" class=" mt-4 btn btn-block  bg-blue-500 text-white ">
-            Mas informacion
+            Mas información
         </a>
    
     </div>

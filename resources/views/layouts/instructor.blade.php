@@ -30,11 +30,11 @@
             <div class="container py-8 grid grid-cols-5 gap-6">
 
                 <aside>
-                    <h1 class="font-bold text-lg mb-4">Edicion del Archivo</h1>
+                    <h1 class="font-bold text-lg mb-4">Edición del Archivo</h1>
         
                     <ul class="text-sm rtext-gray-600 mt-4 ">
                         <li class="leading-7 mb-1 border-l-4 @routeIs('instructor.courses.edit', $course) border-green-400 @else border-transparent @endif pl-2">
-                            <a href="{{route('instructor.courses.edit', $course)}}">Informacion del Archivo </a>
+                            <a href="{{route('instructor.courses.edit', $course)}}">Información del Archivo </a>
                         </li>
 
                         <li class="leading-7 mb-1 border-l-4 @routeIs('instructor.courses.curriculum', $course)  border-green-400 @else border-transparent @endif pl-2 ">
@@ -74,7 +74,7 @@
                         @case(2)
                             <div class="card text-gray-500">
                                 <div class="card-body">
-                                    Este Archivo se enucentra en revision
+                                    Este Archivo se enucentra en revisión
                                 </div>
                             </div>
                         
@@ -91,7 +91,7 @@
                                 @csrf
 
 
-                                <button class="btn btn-danger" type="submit">Volver a Solicitar Revision </button>
+                                <button class="btn btn-danger" type="submit">Volver a Solicitar Revisión </button>
                             </form>
                         </div>
                         

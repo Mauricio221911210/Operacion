@@ -59,7 +59,7 @@ class CourseController extends Controller
        $course = Course::create($request->all());
 
         if($request->file('file')){
-           $url = Storage::put('archive', $request->file('file'));
+           $url = Storage::put('app/public/storage/archive', $request->file('file'));
 
            $course->image()->create([
             'url' => $url
@@ -120,7 +120,7 @@ class CourseController extends Controller
         $course->update($request->all());
 
         if($request->file('file')){
-            $url = Storage::put('public/storage/archive',$request->file('file'));
+            $url = Storage::put('app/public/storage/archive',$request->file('file')); 
 
             if ($course->image) {
                 Storage::delete($course->image->url);

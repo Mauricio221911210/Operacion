@@ -11,7 +11,7 @@ class CoursesCurriculum extends Component
     
 
     public $course, $section, $name;
-
+ 
     protected $rules = [
         'section.name' => 'required' 
     ];

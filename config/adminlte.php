@@ -338,12 +338,14 @@ return [
         [
             'text' => 'Pendientes de Aprobación',
             'route'  => 'admin.courses.index',
-            'icon' => 'fa fa-check-square',
+            'icon' => 'fa fa-check-square', 
+            'can'       => 'Aprobar Archivos',
         ],
         [
             'text' => 'Pendientes de Revisión',
             'route'  => 'admin.courses.archive',
-            'icon' => 'fa fa-check-square',
+            'icon' => 'fa fa-check-square', 
+            'can'       => 'Dar Revisión',
         ],
        /* [
             'text' => 'change_password',

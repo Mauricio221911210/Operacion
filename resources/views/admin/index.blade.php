@@ -7,8 +7,8 @@
 @stop
 
 @section('content')
-    <p>Bienvenido a libro de Operacion</p>
-    <p>Mision </p> 
+    <p>Bienvenido a libro de Operación</p>
+    
 @stop
 
 @section('css')

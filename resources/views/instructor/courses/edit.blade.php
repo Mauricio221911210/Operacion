@@ -10,7 +10,7 @@
      @include('instructor.courses.partials.form')
         
         <div class="flex justify-end">
-            {!! Form::submit('Actualizar informacion', ['class' => 'btn btn-success cursor-pointer']) !!}
+            {!! Form::submit('Actualizar información', ['class' => 'btn btn-success cursor-pointer']) !!}
          </div>
         
       {!! Form::close() !!}
